@@ -1,25 +1,40 @@
 $(function () {
-   if($('#back-to-top').length){
-       var scrollTrigger = 100,
-           backToTop = Function() {
-               var scrollTop = $(window).scrollTop();
-               if (scrollTop > scrollTrigger) {
-                   $('#back-to-top').addClass('show');
-               } else {
-                   $('#back-to-top').removeClass('show');
-               }
-           };
-       backToTop();
-       $(window).on('scroll', function() {
-          backToTop();  
-       });
-       $('#back-to-top').on('click', function(e) {
-          e.preventDefault();
-          $('html,body').animate({
-              scrollTop: 0
-          }, 1250);
-       });
-   } 
+    
+    //sticky navbar less padding
+    $(window).scroll(function(){
+      
+        let position = $(this).scrollTop();
+        
+        if(position >= 100){
+            $('.nav1').addClass('fixed-top');
+        } else{
+            $('.nav1').removeClass('fixed-top');
+        }
+        
+    });
+    
+    // smooth scroll
+    $(document).on('click', 'a[href^="#"]', function (event){
+                event.preventDefault();
+
+                $('body, html').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top - 20
+                }, 1250);
+            });
+    
+});
+
+/*================================
+            gallary
+================================*/
+$(function () {
+    $("#gallary").magnificPopup({
+        delegate: 'a', // the selector for gallery item
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
+    });
 });
 
 $(function () {

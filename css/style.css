@@ -113,13 +113,13 @@ header {
         about
 =======================*/
 .about {
-    margin-top: 80px;
+    margin-top: 100px;
 }
 
 .about h1 {
     letter-spacing: 12px;
     margin-bottom: 15px;
-    margin-top: 80px;
+    margin-top: 100px;
 }
 
 .about h3 {
@@ -293,12 +293,25 @@ header {
     padding-top: 80px;
     padding-bottom: 30px
 }
-.gallary-grids{
-    padding: 0px 15px;
-    padding-bottom: 30px;
+
+.wrapper-img {
+    overflow: hidden;
 }
-.gallary-grid-img{
-    padding: 0px;
+
+.wrapper-img img {
+    -webkit-transition: -webkit-transform 0.5s ease;
+    transition: -webkit-transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.wrapper-img img:hover {
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
 }
 /*=======================
         lecture
@@ -603,31 +616,7 @@ footer{
 .number a{
     color: #ff4f81;
 }
-#back-to-top{
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    z-index: 9999;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    color: #ff4f81;
-    cursor: pointer;
-    border: 1px solid #ff4f81;
-    text-decoration: none;
-    background-size: 40px;
-}
-#back-to-top i{
-    line-height: 40px;
-    font-size: 25px
-}
-#back-to-top:hover{
-    background-color: #ff4f81;
-    color: #fff;
-}
-#back-to-top .show{
-    display: block;
-}
+
 /*=======================
         media query
 =======================*/
